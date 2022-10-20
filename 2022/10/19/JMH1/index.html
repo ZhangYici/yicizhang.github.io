@@ -4,14 +4,17 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Fast Start Markdown in VS, github">
-    <meta name="description" content="Fast Start Markdown in VS
-preference: MarkDown All in One
+    <meta name="keywords" content="JMH1, github">
+    <meta name="description" content="
+1.4编写正确的微基准测试以及高级用法
+1.4.1 编写正确的微基准测试用例
+1.4.2 高级用法
 
 
-Fast Start Markdown in VS
-keyboard shortcuts:
-MarkDown Previ">
+1.5JMH的Profiler
+1.5.1 StackProfiler
+1.5.2 GcProfiler
+1.5.3 ClassLoa">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +26,7 @@ MarkDown Previ">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Fast Start Markdown in VS | ycz</title>
+    <title>JMH1 | ycz</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -340,12 +343,12 @@ MarkDown Previ">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Fast Start Markdown in VS</h1>
+                    <h1 class="description center-align post-title">JMH1</h1>
                 </div>
             </div>
         </div>
@@ -367,25 +370,12 @@ MarkDown Previ">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/VS/">
-                                <span class="chip bg-color">VS</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/VS/" class="post-category">
-                                VS
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -394,7 +384,7 @@ MarkDown Previ">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-11
+                    2022-10-19
                 </div>
                 
 
@@ -418,29 +408,90 @@ MarkDown Previ">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Fast-Start-Markdown-in-VS"><a href="#Fast-Start-Markdown-in-VS" class="headerlink" title="Fast Start Markdown in VS"></a>Fast Start Markdown in VS</h1><blockquote>
-<p>preference: MarkDown All in One</p>
-</blockquote>
-<ul>
-<li><a href="#fast-start-markdown-in-vs">Fast Start Markdown in VS</a><ul>
-<li><a href="#keyboard-shortcuts">keyboard shortcuts:</a></li>
-<li><a href="#markdown-preview">MarkDown Preview</a></li>
-<li><a href="#formula">formula</a></li>
-<li><a href="#html%E6%A0%87%E8%AE%B0">HTML标记</a></li>
+                <ul>
+<li><a href="#14%E7%BC%96%E5%86%99%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%BE%AE%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E4%BB%A5%E5%8F%8A%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95">1.4编写正确的微基准测试以及高级用法</a><ul>
+<li><a href="#141-%E7%BC%96%E5%86%99%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%BE%AE%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B">1.4.1 编写正确的微基准测试用例</a></li>
+<li><a href="#142-%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95">1.4.2 高级用法</a></li>
 </ul>
 </li>
+<li><a href="#15jmh%E7%9A%84profiler">1.5JMH的Profiler</a><ul>
+<li><a href="#151-stackprofiler">1.5.1 StackProfiler</a></li>
+<li><a href="#152-gcprofiler">1.5.2 GcProfiler</a></li>
+<li><a href="#153-classloaderprofiler">1.5.3 ClassLoaderProfiler</a></li>
+<li><a href="#154-compilerprofiler">1.5.4 CompilerProfiler</a></li>
 </ul>
-<h2 id="keyboard-shortcuts"><a href="#keyboard-shortcuts" class="headerlink" title="keyboard shortcuts:"></a>keyboard shortcuts:</h2><ul>
-<li>ctrl+B: <strong>字体加粗</strong></li>
-<li><input checked="" disabled="" type="checkbox"> alt+C: 打钩<br></li>
-<li>VScode中通过<code>ctrl+shift+p</code>使用命令：<code>Create Table of Contents</code>自动创建目录</li>
+</li>
+<li><a href="#16%E6%9C%AC%E7%AB%A0%E6%80%BB%E7%BB%93">1.6本章总结</a></li>
 </ul>
-<h2 id="MarkDown-Preview"><a href="#MarkDown-Preview" class="headerlink" title="MarkDown Preview"></a>MarkDown Preview</h2><p>使用命令<code>ctrl+shift+v</code>预览MarkDown</p>
-<h2 id="formula"><a href="#formula" class="headerlink" title="formula"></a>formula</h2><p>使用<code>$g(x)$</code>来表示$g(x)$<br><br>使用<code>$$ f(x) = ax + b $$</code> 来表示<br>$$ f(x) &#x3D; ax + b $$<br>使用<code>$\a$</code>来快速补全<code>a</code>为前缀的Math符号<br></p>
-<div align=center>![快捷键](./%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8markdown/image1.png)
-</div>
-## HTML标记
-使用`<br>`来表示换行
+<h2 id="1-4编写正确的微基准测试以及高级用法"><a href="#1-4编写正确的微基准测试以及高级用法" class="headerlink" title="1.4编写正确的微基准测试以及高级用法"></a>1.4编写正确的微基准测试以及高级用法</h2><h3 id="1-4-1-编写正确的微基准测试用例"><a href="#1-4-1-编写正确的微基准测试用例" class="headerlink" title="1.4.1 编写正确的微基准测试用例"></a>1.4.1 编写正确的微基准测试用例</h3><p>【1】避免DCE(Dead Code Elimination)</p>
+<p><strong>Dead Code Elimination 是JVM擦去了一些上下文无关或者计算不会用到的代码片段</strong></p>
+<p>例如：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> z <span class="token operator">=</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在JVM优化中，该test方法可能会被当做一个空方法看待。</p>
+<p>【2】使用Blackhole<br>Blackhole可以允许无返回值的函数不进行DC（Dead Code）。</p>
+<p>用法如下示例：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">concurrent<span class="token punctuation">.</span>jmh</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>openjdk<span class="token punctuation">.</span>jmh<span class="token punctuation">.</span>annotations<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>openjdk<span class="token punctuation">.</span>jmh<span class="token punctuation">.</span>infra<span class="token punctuation">.</span></span><span class="token class-name">Blackhole</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>openjdk<span class="token punctuation">.</span>jmh<span class="token punctuation">.</span>runner<span class="token punctuation">.</span></span><span class="token class-name">Runner</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>openjdk<span class="token punctuation">.</span>jmh<span class="token punctuation">.</span>runner<span class="token punctuation">.</span></span><span class="token class-name">RunnerException</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>openjdk<span class="token punctuation">.</span>jmh<span class="token punctuation">.</span>runner<span class="token punctuation">.</span>options<span class="token punctuation">.</span></span><span class="token class-name">Options</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>openjdk<span class="token punctuation">.</span>jmh<span class="token punctuation">.</span>runner<span class="token punctuation">.</span>options<span class="token punctuation">.</span></span><span class="token class-name">OptionsBuilder</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">TimeUnit</span></span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@BenchmarkMode</span><span class="token punctuation">(</span><span class="token class-name">Mode<span class="token punctuation">.</span>AverageTime</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Fork</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Warmup</span><span class="token punctuation">(</span>iterations <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Measurement</span><span class="token punctuation">(</span>iterations <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@OutputTimeUnit</span><span class="token punctuation">(</span><span class="token class-name">TimeUnit</span><span class="token punctuation">.</span><span class="token constant">NANOSECONDS</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@State</span><span class="token punctuation">(</span><span class="token class-name">Scope<span class="token punctuation">.</span>Thread</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JMHExample14</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">double</span> x1 <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token constant">PI</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> x2 <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Benchmark</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">baseline</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Benchmark</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">powButReturnOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+
+        <span class="token comment">//DC，会被擦除</span>
+        <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//不会被擦除，有返回值</span>
+        <span class="token keyword">return</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span>x2<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Benchmark</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">powThenAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span>x2<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Benchmark</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">useBlackhole</span><span class="token punctuation">(</span><span class="token class-name">Blackhole</span> blackhole<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        blackhole<span class="token punctuation">.</span><span class="token function">consume</span><span class="token punctuation">(</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        blackhole<span class="token punctuation">.</span><span class="token function">consume</span><span class="token punctuation">(</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span>x2<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span>  <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token keyword">throws</span> <span class="token class-name">RunnerException</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">final</span> <span class="token class-name">Options</span> options <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">OptionsBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">include</span><span class="token punctuation">(</span><span class="token class-name">JMHExample14</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getSimpleName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">Runner</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注：使用blackhole需要</p>
+<h3 id="1-4-2-高级用法"><a href="#1-4-2-高级用法" class="headerlink" title="1.4.2 高级用法"></a>1.4.2 高级用法</h3><h2 id="1-5JMH的Profiler"><a href="#1-5JMH的Profiler" class="headerlink" title="1.5JMH的Profiler"></a>1.5JMH的Profiler</h2><h3 id="1-5-1-StackProfiler"><a href="#1-5-1-StackProfiler" class="headerlink" title="1.5.1 StackProfiler"></a>1.5.1 StackProfiler</h3><h3 id="1-5-2-GcProfiler"><a href="#1-5-2-GcProfiler" class="headerlink" title="1.5.2 GcProfiler"></a>1.5.2 GcProfiler</h3><h3 id="1-5-3-ClassLoaderProfiler"><a href="#1-5-3-ClassLoaderProfiler" class="headerlink" title="1.5.3 ClassLoaderProfiler"></a>1.5.3 ClassLoaderProfiler</h3><h3 id="1-5-4-CompilerProfiler"><a href="#1-5-4-CompilerProfiler" class="headerlink" title="1.5.4 CompilerProfiler"></a>1.5.4 CompilerProfiler</h3><h2 id="1-6本章总结"><a href="#1-6本章总结" class="headerlink" title="1.6本章总结"></a>1.6本章总结</h2>
                 
             </div>
             <hr/>
@@ -466,7 +517,7 @@ MarkDown Previ">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/10/11/%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8markdown/">http://example.com/2022/10/11/%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8markdown/</a>
+                    <a href="http://example.com/2022/10/19/JMH1/">http://example.com/2022/10/19/JMH1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -503,11 +554,7 @@ MarkDown Previ">
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/VS/">
-                                    <span class="chip bg-color">VS</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -588,13 +635,13 @@ MarkDown Previ">
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/10/11/java%E4%B8%AD%E7%9A%84%E8%AF%BB%E4%B8%8E%E5%86%99/">
+                <a href="/2022/10/20/high-performance-MySQL/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="hello">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="high_performance_MySQL">
                         
-                        <span class="card-title">hello</span>
+                        <span class="card-title">high_performance_MySQL</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -605,8 +652,45 @@ MarkDown Previ">
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-20
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            ycz
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/10/14/JMH0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="JAVA高并发笔记之JMH(上)">
+                        
+                        <span class="card-title">JAVA高并发笔记之JMH(上)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -624,55 +708,6 @@ MarkDown Previ">
                     
                     <a href="/tags/java/">
                         <span class="chip bg-color">java</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/09/19/test3/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="test3">
-                        
-                        <span class="card-title">test3</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-19
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/TypeScript/" class="post-category">
-                                    TypeScript
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/TypeScript/">
-                        <span class="chip bg-color">TypeScript</span>
                     </a>
                     
                 </div>
